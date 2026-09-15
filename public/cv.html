@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Callysta Kalyana — CV</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Inter, -apple-system, sans-serif;
+      background: #f0f0f0;
+      color: #1f2937;
+      padding: 20px;
+      -webkit-print-color-fix: exact;
+      print-color-adjust: exact;
+    }
+
+    .cv-page {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .cv-header {
+      background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+      color: white;
+      padding: 40px 40px 30px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .cv-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      border: 4px solid rgba(255,255,255,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 40px;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+
+    .cv-header-text h1 {
+      font-size: 32px;
+      margin-bottom: 6px;
+    }
+
+    .cv-header-text p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .cv-body {
+      padding: 40px;
+    }
+
+    .cv-section {
+      margin-bottom: 32px;
+    }
+
+    .cv-section h2 {
+      font-size: 18px;
+      color: #16a34a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #dcfce7;
+    }
+
+    .cv-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 12px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .cv-contact span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .cv-item {
+      margin-bottom: 18px;
+    }
+
+    .cv-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 6px;
+    }
+
+    .cv-item-header h3 {
+      font-size: 16px;
+      color: #111827;
+    }
+
+    .cv-item-date {
+      font-size: 13px;
+      color: #9ca3af;
+      font-weight: 500;
+    }
+
+    .cv-item p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4b5563;
+    }
+
+    .cv-item ul {
+      padding-left: 20px;
+      margin-top: 6px;
+    }
+
+    .cv-item ul li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 4px;
+    }
+
+    .cv-skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .cv-skills .skill-tag {
+      background: #dcfce7;
+      color: #166534;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .cv-footer {
+      text-align: center;
+      padding: 20px;
+      background: #f8fafc;
+      font-size: 13px;
+      color: #9ca3af;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    /* Print button */
+    .print-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #16a34a;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(22,163,74,0.4);
+      transition: all 0.3s;
+      z-index: 100;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .print-btn:hover {
+      background: #15803d;
+      transform: translateY(-2px);
+    }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .cv-page { box-shadow: none; border-radius: 0; max-width: 100%; }
+      .print-btn { display: none; }
+      .cv-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    @media (max-width: 600px) {
+      .cv-header { flex-direction: column; text-align: center; padding: 30px 20px; }
+      .cv-body { padding: 24px; }
+      .cv-item-header { flex-direction: column; }
+      .cv-contact { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <button class="print-btn" onclick="window.print()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 6 2 18 2 18 9"/>
+      <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+      <rect x="6" y="14" width="12" height="8"/>
+    </svg>
+    Save as PDF
+  </button>
+
+  <div class="cv-page">
+    <!-- Header -->
+    <div class="cv-header">
+      <div class="cv-avatar">CK</div>
+      <div class="cv-header-text">
+        <h1>Callysta Kalyana</h1>
+        <p>Software Engineering Student &amp; Junior Full-Stack Developer</p>
+        <div class="cv-contact">
+          <span>Email: callysta@example.com</span>
+          <span>GitHub: github.com/callyjia</span>
+          <span>Location: Indonesia</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-body">
+      <!-- Summary -->
+      <div class="cv-section">
+        <h2>Professional Summary</h2>
+        <p>
+          Software Engineering student with a strong interest in web development and
+          software engineering. Experienced in building web applications, management
+          systems, and database-driven applications using modern technologies. Passionate
+          about turning ideas into practical software solutions.
+        </p>
+      </div>
+
+      <!-- Education -->
+      <div class="cv-section">
+        <h2>Education</h2>
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h3>Software Engineering</h3>
+            <span class="cv-item-date">2022 — Present</span>
+          </div>
+          <p>Focused on software development, system design, database management, and web technologies.</p>
+        </div>
+      </div>
+
+      <!-- Experience / Projects -->
+      <div class="cv-section">
+        <h2>Project Experience</h2>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h3>Warehouse Management System</h3>
+            <span class="cv-item-date">Corporate Internship</span>
+          </div>
+          <p>Full-stack warehouse management web application.</p>
+          <ul>
+            <li>Implemented inventory traceability and sealing management modules</li>
+            <li>Board lifecycle tracking and historical records</li>
+            <li>Built with Vue.js, Element Plus, Spring Boot, MySQL</li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h3>Point-of-Sale System</h3>
+            <span class="cv-item-date">Academic Project</span>
+          </div>
+          <p>Mobile checkout app for small and medium-sized retail stores.</p>
+          <ul>
+            <li>Digitalized product scanning, rapid checkout, and daily settlement</li>
+            <li>Built with Kotlin, Gradle, Node.js</li>
+          </ul>
+        </div>
+
+        <div class="cv-item">
+          <div class="cv-item-header">
+            <h3>Food Delivery System</h3>
+            <span class="cv-item-date">Academic Project</span>
+          </div>
+          <p>Meal-ordering application with user, merchant, and admin workflows.</p>
+          <ul>
+            <li>Order placement, merchant acceptance, dish management</li>
+            <li>Built with HTML, CSS, JavaScript, Postman</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="cv-section">
+        <h2>Technical Skills</h2>
+        <div class="cv-skills">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">HTML &amp; CSS</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">Vue.js</span>
+          <span class="skill-tag">Vite</span>
+          <span class="skill-tag">Element Plus</span>
+          <span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">Git &amp; GitHub</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">Linux</span>
+        </div>
+      </div>
+
+      <!-- Languages -->
+      <div class="cv-section">
+        <h2>Languages</h2>
+        <div class="cv-skills">
+          <span class="skill-tag">English (Professional)</span>
+          <span class="skill-tag">Indonesian (Native)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cv-footer">
+      Callysta Kalyana — Curriculum Vitae — Generated from Portfolio
+    </div>
+  </div>
+</body>
+</html>
