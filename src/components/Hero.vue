@@ -54,19 +54,13 @@
               <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
             </svg>
           </a>
-          <a href="mailto:callysta@example.com" aria-label="Email">
+          <a href="mailto:kalyanacallysta@gmail.com" aria-label="Email">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
               <polyline points="22,6 12,13 2,6" />
             </svg>
           </a>
-          <a href="https://www.upwork.com" target="_blank" aria-label="Upwork">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17.5 6.5c-2.2 0-4.1 1.3-5 3.1c-.7-1.9-2.5-3.1-4.6-3.1C5.3 6.5 3 8.8 3 11.8c0 2.9 2.1 5.7 5 5.7c2.1 0 3.9-1.3 4.6-3.2c.7 1.9 2.5 3.2 4.6 3.2c2.9 0 5.3-2.3 5.3-5.5s-2.2-5.7-5-5.7zm-9.6 9.4c-1.9 0-3.3-1.7-3.3-4.1c0-2.4 1.4-4.1 3.3-4.1c1.9 0 3.3 1.7 3.3 4.1c0 2.4-1.4 4.1-3.3 4.1zm9.6 0c-1.5 0-2.7-1-3.1-2.6c.5.2 1 .3 1.6.3c.5 0 1-.1 1.5-.3c-.2 1.2-1 2.2-2.2 2.5c.6.1 1.2.1 1.8.1c-.3 0-.5 0-.8 0c1.2-.2 2.1-1.1 2.5-2.3c.3.6.5 1.3.5 2c0 .2 0 .3 0 .3z" />
-              <path d="M14.9 12.2c-.1-.5-.2-1-.2-1.5c0-2.4 1.4-4.1 3.3-4.1c.6 0 1.1.1 1.6.4c-.3-1.7-1.7-3-3.4-3c-2 0-3.5 1.7-3.5 4.1c0 2.1 1.2 3.6 2.9 4c-.2-.3-.5-.6-.7-.9z" opacity="0" />
-              <path d="M17.5 14.2c-1.4 0-2.5-1.1-2.5-2.5c0-1.4 1.1-2.5 2.5-2.5s2.5 1.1 2.5 2.5c0 1.4-1.1 2.5-2.5 2.5z" />
-            </svg>
-          </a>
+          
         </div>
       </div>
 
@@ -75,27 +69,13 @@
         <div class="photo-ring"></div>
         <div class="photo-ring photo-ring-2"></div>
         <div class="photo-container">
-          <img src="/profile-photo.svg" alt="Callysta Kalyana" />
+          <img src="../assets/Callysta Kalyana 3x4 Red.JPG" alt="Callysta Kalyana" />
         </div>
-        <!-- Floating badges -->
-        <div class="badge badge-1">
-          <span class="badge-dot"></span>
-          Available for work
-        </div>
-        <div class="badge badge-2">
-          <span>5+</span>
-          Projects
-        </div>
+        
       </div>
     </div>
 
-    <!-- Scroll indicator -->
-    <a href="#about" class="scroll-indicator">
-      <span>Scroll</span>
-      <div class="mouse">
-        <div class="wheel"></div>
-      </div>
-    </a>
+  
   </section>
 </template>
 
@@ -400,60 +380,10 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 20%;
 }
 
-/* Floating badges */
-.badge {
-  position: absolute;
-  background: white;
-  padding: 8px 16px;
-  border-radius: 10px;
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--gray-700);
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 3;
-}
 
-.badge-1 {
-  bottom: 40px;
-  left: -10px;
-  animation: float 5s ease-in-out infinite;
-}
-
-.badge-2 {
-  top: 40px;
-  right: -10px;
-  animation: float 6s ease-in-out infinite;
-  animation-delay: 1s;
-}
-
-.badge-2 span {
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--green);
-}
-
-.badge-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #22c55e;
-  position: relative;
-}
-
-.badge-dot::before {
-  content: '';
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: #22c55e;
-  animation: pulse-ring 2s ease-out infinite;
-}
 
 /* Scroll indicator */
 .scroll-indicator {
@@ -474,23 +404,6 @@ h2 {
   z-index: 2;
 }
 
-.mouse {
-  width: 24px;
-  height: 38px;
-  border: 2px solid var(--gray-300);
-  border-radius: 12px;
-  display: flex;
-  justify-content: center;
-  padding-top: 6px;
-}
-
-.wheel {
-  width: 4px;
-  height: 8px;
-  background: var(--gray-400);
-  border-radius: 2px;
-  animation: scroll-wheel 1.5s ease-in-out infinite;
-}
 
 @keyframes scroll-wheel {
   0% { opacity: 1; transform: translateY(0); }
@@ -570,10 +483,6 @@ h2 {
 
   .btn {
     justify-content: center;
-  }
-
-  .scroll-indicator {
-    display: none;
   }
 
   .photo-container {

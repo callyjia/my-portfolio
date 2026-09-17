@@ -91,7 +91,7 @@ const year = new Date().getFullYear()
 
 function handleSubmit() {
   // Build a mailto link so the user's email client opens with the form filled in
-  const to = 'callysta@example.com'
+  const to = 'kalyanacallysta@gmail.com'
   const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`)
   const body = encodeURIComponent(
     `Name: ${form.name}\nEmail/Phone: ${form.contact}\n\n${form.message}`

@@ -22,22 +22,6 @@
             I have gained experience in frontend development, backend
             development, databases, software testing, and system design.
           </p>
-
-          <!-- Stats -->
-          <div class="about-stats">
-            <div class="stat">
-              <span class="stat-num">3+</span>
-              <span class="stat-label">Major Projects</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">10+</span>
-              <span class="stat-label">Technologies</span>
-            </div>
-            <div class="stat">
-              <span class="stat-num">2+</span>
-              <span class="stat-label">Years Coding</span>
-            </div>
-          </div>
         </div>
 
         <div class="about-card reveal reveal-delay-3">
@@ -105,36 +89,6 @@ h2 {
   margin-bottom: 16px;
 }
 
-/* Stats */
-.about-stats {
-  display: flex;
-  gap: 30px;
-  margin-top: 30px;
-  flex-wrap: wrap;
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-}
-
-.stat-num {
-  font-size: 32px;
-  font-weight: 800;
-  background: var(--gradient-green);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-}
-
-.stat-label {
-  font-size: 13px;
-  color: var(--gray-500);
-  margin-top: 6px;
-  font-weight: 500;
-}
-
 /* About card */
 .about-card {
   background: var(--gray-50);
@@ -191,14 +145,6 @@ h2 {
 
   .about-content p {
     font-size: 15px;
-  }
-
-  .about-stats {
-    gap: 20px;
-  }
-
-  .stat-num {
-    font-size: 26px;
   }
 
   .section {
