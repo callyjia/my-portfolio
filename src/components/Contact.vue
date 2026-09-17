@@ -7,66 +7,116 @@
     </div>
 
     <div class="container">
-      <p class="section-label reveal">CONTACT</p>
-      <h2 class="reveal reveal-delay-1">Let's Work Together</h2>
+      <h2 class="reveal">Contact Me</h2>
 
-      <p class="contact-text reveal reveal-delay-2">
-        I'm interested in web development, software projects,
-        and freelance opportunities. Feel free to reach out.
+      <p class="contact-text reveal reveal-delay-1">
+        Got a project waiting to be realized? Let's collaborate and make it happen!
       </p>
 
-      <div class="contact-links reveal reveal-delay-3">
-        <a href="mailto:callysta@example.com" class="contact-card">
-          <div class="contact-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
+      <form
+        class="contact-form reveal reveal-delay-2"
+        @submit.prevent="handleSubmit"
+      >
+        <div class="form-row">
+          <div class="form-group">
+            <input
+              v-model="form.name"
+              type="text"
+              placeholder="Your Name *"
+              required
+              autocomplete="name"
+            />
           </div>
-          <span class="contact-label">Email Me</span>
-          <span class="contact-value">callysta@example.com</span>
-        </a>
 
-        <a href="https://github.com/callyjia" target="_blank" class="contact-card">
-          <div class="contact-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-            </svg>
+          <div class="form-group">
+            <input
+              v-model="form.contact"
+              type="text"
+              placeholder="Email / Phone *"
+              required
+              autocomplete="email"
+            />
           </div>
-          <span class="contact-label">GitHub</span>
-          <span class="contact-value">github.com/callyjia</span>
-        </a>
+        </div>
 
-        <a href="https://www.upwork.com" target="_blank" class="contact-card">
-          <div class="contact-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <path d="M8 14s1.5 2 4 2 4-2 4-2" />
-              <line x1="9" y1="9" x2="9.01" y2="9" />
-              <line x1="15" y1="9" x2="15.01" y2="9" />
+        <div class="form-group">
+          <textarea
+            v-model="form.message"
+            placeholder="Message *"
+            required
+            rows="10"
+          ></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="send-btn">
+            <span>SEND</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13" />
+              <polygon points="22 2 15 22 11 13 2 9 22 2" />
             </svg>
-          </div>
-          <span class="contact-label">Upwork</span>
-          <span class="contact-value">Hire me on Upwork</span>
-        </a>
-      </div>
+          </button>
+        </div>
 
-      <!-- Footer -->
-      <footer class="contact-footer reveal reveal-delay-4">
-        <p>Designed &amp; built by Callysta Kalyana</p>
-        <p class="footer-year">&copy; {{ year }}</p>
-      </footer>
+        <p v-if="statusMessage" class="status-message" :class="statusType">
+          {{ statusMessage }}
+        </p>
+      </form>
     </div>
+
+    <!-- Bottom gradient line -->
+    <div class="bottom-accent"></div>
+
+    <!-- Footer -->
+    <footer class="contact-footer">
+      <p>Designed &amp; built by Callysta Kalyana</p>
+      <p class="footer-year">&copy; {{ year }}</p>
+    </footer>
   </section>
 </template>
 
 <script setup>
+import { reactive, ref } from 'vue'
+
+const form = reactive({
+  name: '',
+  contact: '',
+  message: '',
+})
+
+const statusMessage = ref('')
+const statusType = ref('success')
+
 const year = new Date().getFullYear()
+
+function handleSubmit() {
+  // Build a mailto link so the user's email client opens with the form filled in
+  const to = 'callysta@example.com'
+  const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`)
+  const body = encodeURIComponent(
+    `Name: ${form.name}\nEmail/Phone: ${form.contact}\n\n${form.message}`
+  )
+
+  const mailtoLink = `mailto:${to}?subject=${subject}&body=${body}`
+
+  // Open the user's mail client
+  window.location.href = mailtoLink
+
+  statusType.value = 'success'
+  statusMessage.value = 'Opening your email client...'
+
+  setTimeout(() => {
+    form.name = ''
+    form.contact = ''
+    form.message = ''
+    statusMessage.value = ''
+  }, 3000)
+}
 </script>
 
 <style scoped>
 .section {
-  padding: 100px 24px 40px;
+  padding: 100px 24px 0;
   position: relative;
   overflow: hidden;
 }
@@ -74,7 +124,12 @@ const year = new Date().getFullYear()
 .contact-section {
   background: var(--dark);
   color: white;
-  text-align: center;
+}
+
+.contact-section .container {
+  text-align: left;
+  position: relative;
+  z-index: 1;
 }
 
 /* Animated background orbs */
@@ -89,7 +144,7 @@ const year = new Date().getFullYear()
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.15;
+  opacity: 0.12;
 }
 
 .bg-orb-1 {
@@ -105,127 +160,186 @@ const year = new Date().getFullYear()
   width: 250px;
   height: 250px;
   background: var(--green);
-  bottom: -50px;
+  bottom: 200px;
   right: -50px;
   animation: float 10s ease-in-out infinite reverse;
 }
 
 .container {
-  max-width: 800px;
+  max-width: 1100px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.section-label {
-  color: var(--green-accent);
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 14px;
-  margin-bottom: 8px;
 }
 
 h2 {
   font-size: 42px;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
+  color: white;
+  margin-bottom: 18px;
 }
 
 .contact-text {
   color: #d1d5db;
-  font-size: 18px;
-  line-height: 1.7;
-  max-width: 550px;
-  margin: 16px auto 40px;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 35px;
 }
 
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+/* Form */
+.contact-form {
+  width: 100%;
 }
 
-.contact-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 28px 24px;
-  border-radius: 14px;
-  text-decoration: none;
-  color: white;
-  transition: all var(--transition);
-  width: 200px;
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
 }
 
-.contact-card:hover {
-  background: rgba(74, 222, 128, 0.08);
-  border-color: rgba(74, 222, 128, 0.3);
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(74, 222, 128, 0.1);
+.form-group {
+  width: 100%;
 }
 
-.contact-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(74, 222, 128, 0.12);
-  color: var(--green-accent);
-  transition: all var(--transition);
-  margin-bottom: 4px;
-}
-
-.contact-card:hover .contact-icon {
-  background: var(--green);
-  color: white;
-  transform: scale(1.1);
-}
-
-.contact-label {
-  font-weight: 700;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 16px 18px;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: 6px;
+  color: var(--gray-900);
+  font-family: inherit;
   font-size: 15px;
+  transition: all var(--transition);
+  outline: none;
 }
 
-.contact-value {
-  color: #9ca3af;
-  font-size: 13px;
+.form-group textarea {
+  resize: vertical;
+  min-height: 240px;
+  line-height: 1.6;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--gray-400);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* Send button */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.send-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: white;
+  color: var(--gray-900);
+  border: 1px solid var(--gray-300);
+  padding: 14px 26px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.send-btn:hover {
+  background: var(--gray-50);
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.send-btn:active {
+  transform: translateY(0);
+}
+
+/* Status message */
+.status-message {
+  margin-top: 14px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.status-message.success {
+  background: rgba(74, 222, 128, 0.1);
+  color: var(--green-accent);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+/* Bottom accent line */
+.bottom-accent {
+  position: relative;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--green-accent) 30%,
+    var(--green) 50%,
+    var(--green-accent) 70%,
+    transparent 100%);
+  margin-top: 50px;
+  z-index: 1;
 }
 
 /* Footer */
 .contact-footer {
-  margin-top: 60px;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #9ca3af;
+  padding: 30px 24px;
+  text-align: center;
+  color: #6b7280;
   font-size: 14px;
+  background: var(--dark);
+  position: relative;
+  z-index: 1;
 }
 
 .footer-year {
   margin-top: 4px;
+  font-size: 13px;
 }
 
 /* ===== Mobile ===== */
 @media (max-width: 600px) {
+  .section {
+    padding: 70px 20px 0;
+  }
+
   h2 {
     font-size: 32px;
   }
 
-  .contact-text {
-    font-size: 15px;
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
-  .contact-card {
+  .form-group input,
+  .form-group textarea {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .form-group textarea {
+    min-height: 180px;
+  }
+
+  .send-btn {
     width: 100%;
-  }
-
-  .section {
-    padding: 70px 20px 30px;
+    justify-content: center;
   }
 }
 </style>
