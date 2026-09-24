@@ -1,5 +1,12 @@
 <template>
   <nav class="navbar" :class="{ scrolled: isScrolled }">
+    <!-- Mobile overlay (rendered first so it sits behind nav content) -->
+    <div
+      v-if="menuOpen"
+      class="nav-overlay"
+      @click="closeMenu"
+    ></div>
+
     <div class="nav-container">
       <a href="#home" class="logo" @click="closeMenu">
         <span class="logo-bracket">&lt;</span>Callysta<span class="logo-bracket">/&gt;</span>
@@ -28,13 +35,6 @@
         <a href="/cv.html" target="_blank" class="nav-cv-btn" @click="closeMenu">Download CV</a>
       </div>
     </div>
-
-    <!-- Mobile overlay -->
-    <div
-      v-if="menuOpen"
-      class="nav-overlay"
-      @click="closeMenu"
-    ></div>
   </nav>
 </template>
 
@@ -123,40 +123,7 @@ onUnmounted(() => {
   transition: color var(--transition);
 }
 
-.nav-links a:not(.nav-cv-btn)::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--green);
-  border-radius: 2px;
-  transition: width var(--transition);
-}
 
-.nav-links a:not(.nav-cv-btn):hover {
-  color: var(--green);
-}
-
-.nav-links a:not(.nav-cv-btn):hover::after {
-  width: 100%;
-}
-
-.nav-cv-btn {
-  background: var(--green) !important;
-  color: white !important;
-  padding: 8px 18px;
-  border-radius: 8px;
-  font-weight: 600 !important;
-  transition: all var(--transition) !important;
-}
-
-.nav-cv-btn:hover {
-  background: var(--green-dark) !important;
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-green);
-}
 
 /* Hamburger */
 .nav-toggle {
@@ -216,6 +183,7 @@ onUnmounted(() => {
     box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
     transition: right var(--transition-slow);
     padding: 40px;
+    z-index: 1000;
   }
 
   .nav-links.open {

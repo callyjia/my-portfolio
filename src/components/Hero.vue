@@ -33,14 +33,7 @@
             </svg>
           </a>
 
-          <a href="/cv.html" target="_blank" class="btn cv">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="7 10 12 15 17 10" />
-              <line x1="12" y1="15" x2="12" y2="3" />
-            </svg>
-            <span>Download CV</span>
-          </a>
+          
 
           <a href="#contact" class="btn secondary">
             Contact Me
@@ -284,11 +277,7 @@ h2 {
   box-shadow: 0 6px 25px rgba(22, 163, 74, 0.35);
 }
 
-.btn.cv {
-  background: white;
-  color: var(--gray-700);
-  border: 2px solid var(--gray-200);
-}
+
 
 .btn.cv:hover {
   border-color: var(--green);
