@@ -30,9 +30,7 @@
         <a href="#about" @click="closeMenu">About</a>
         <a href="#skills" @click="closeMenu">Skills</a>
         <a href="#projects" @click="closeMenu">Projects</a>
-        <a href="#freelance" @click="closeMenu">Freelance</a>
         <a href="#contact" @click="closeMenu">Contact</a>
-        <a href="/cv.html" target="_blank" class="nav-cv-btn" @click="closeMenu">Download CV</a>
       </div>
     </div>
   </nav>

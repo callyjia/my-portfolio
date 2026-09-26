@@ -243,21 +243,26 @@
           </p>
 
           <div class="screenshots">
-            <div class="screenshot-placeholder"> 
-              <span>Acro Screenshot 1</span> 
-            </div>
 
-            <div class="screenshot-placeholder"> 
-              <span>Acro Screenshot 2</span> 
-            </div>
+            <figure class="screenshot-item">
+              <img :src="acroAnalytics" alt="Acro Analytics dashboard showing revenue and order statistics" />
+              <figcaption>Analytics Dashboard</figcaption>
+            </figure>
 
-            <div class="screenshot-placeholder"> 
-              <span>Acro Screenshot 3</span> 
-            </div>
+            <figure class="screenshot-item">
+              <img :src="acroProducts" alt="Acro product grid with snack items and stock counts" />
+              <figcaption>Product List</figcaption>
+            </figure>
 
-            <div class="screenshot-placeholder"> 
-              <span>Acro Screenshot 4</span> 
-            </div>
+            <figure class="screenshot-item">
+              <img :src="acroPaymentQr" alt="Acro payment QR code screen" />
+              <figcaption>Payment QR</figcaption>
+            </figure>
+
+            <figure class="screenshot-item">
+              <img :src="acroOrders" alt="Acro order history showing previous orders" />
+              <figcaption>Order History</figcaption>
+            </figure>
 
           </div>
         </div>
@@ -284,8 +289,18 @@
   </div>
 </template>
 
-<style scoped>
+<script setup>
+import { useScrollReveal } from '../composables/useScrollReveal'
 
+import acroAnalytics from '../assets/acro-analytics.png'
+import acroPaymentQr from '../assets/acro-payment-qr.png'
+import acroProducts from '../assets/acro-products.png'
+import acroOrders from '../assets/acro-orders.png'
+
+useScrollReveal()
+</script>
+
+<style scoped>
 .project-page { 
   padding-top: 70px; 
 }
@@ -478,26 +493,47 @@
   margin: 0; 
 }
 
-/* Screenshots */ 
+/* Screenshots */
 
-.screenshots { 
-  display: grid; 
-  grid-template-columns: repeat(2, 1fr); 
-  gap: 20px; 
+.screenshots {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
 }
 
-.screenshot-placeholder { 
-  height: 420px; 
-  background: #f3f4f6; 
-  border: 1px dashed #d1d5db; 
-  border-radius: 12px; 
-  
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  
-  color: #6b7280; 
-  font-weight: 600; 
+.screenshot-item {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.screenshot-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: #bbf7d0;
+}
+
+.screenshot-item img {
+  display: block;
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.screenshot-item figcaption {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
 }
 
 /* Buttons */ 
