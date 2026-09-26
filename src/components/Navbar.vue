@@ -8,7 +8,7 @@
     ></div>
 
     <div class="nav-container">
-      <a href="#home" class="logo" @click="closeMenu">
+      <a href="#home" class="logo" @click.prevent="goToSection('home')">
         <span class="logo-bracket">&lt;</span>Callysta<span class="logo-bracket">/&gt;</span>
       </a>
 
@@ -26,11 +26,11 @@
 
       <!-- Nav links -->
       <div class="nav-links" :class="{ open: menuOpen }">
-        <a href="#home" @click="closeMenu">Home</a>
-        <a href="#about" @click="closeMenu">About</a>
-        <a href="#skills" @click="closeMenu">Skills</a>
-        <a href="#projects" @click="closeMenu">Projects</a>
-        <a href="#contact" @click="closeMenu">Contact</a>
+        <a href="#home" @click.prevent="goToSection('home')">Home</a>
+        <a href="#about" @click.prevent="goToSection('about')">About</a>
+        <a href="#skills" @click.prevent="goToSection('skills')">Skills</a>
+        <a href="#projects" @click.prevent="goToSection('projects')">Projects</a>
+        <a href="#contact" @click.prevent="goToSection('contact')">Contact</a>
       </div>
     </div>
   </nav>
@@ -38,6 +38,10 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { useRouter, useRoute } from 'vue-router'
+
+const router = useRouter()
+const route = useRoute()
 
 const menuOpen = ref(false)
 const isScrolled = ref(false)
@@ -48,6 +52,16 @@ function toggleMenu() {
 
 function closeMenu() {
   menuOpen.value = false
+}
+
+function goToSection(section) {
+  closeMenu()
+  if (route.path === '/') {
+    const el = document.getElementById(section)
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  } else {
+    router.push({ path: '/', hash: '#' + section })
+  }
 }
 
 function handleScroll() {

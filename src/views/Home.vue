@@ -4,7 +4,6 @@
     <About />
     <Skills />
     <Projects />
-    <Freelance />
     <Contact />
   </div>
 </template>
