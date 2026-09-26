@@ -294,8 +294,7 @@ useScrollReveal()
   border: 1px solid var(--gray-200);
   background: white;
   transition: all var(--transition);
-  display: flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .screenshot:hover {
@@ -311,13 +310,30 @@ useScrollReveal()
 }
 
 .screenshot figcaption {
-  padding: 12px 16px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 14px 18px;
   font-size: 14px;
   font-weight: 600;
-  color: var(--gray-700);
+  color: white;
   text-align: center;
-  background: var(--gray-50);
-  border-top: 1px solid var(--gray-200);
+  background: linear-gradient(
+    to top,
+    rgba(17, 24, 39, 0.85) 0%,
+    rgba(17, 24, 39, 0.55) 70%,
+    transparent 100%
+  );
+  letter-spacing: 0.3px;
+  transform: translateY(4px);
+  opacity: 0.85;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.screenshot:hover figcaption {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .project-actions {
