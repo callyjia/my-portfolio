@@ -13,18 +13,7 @@
           inventory, sales, payments, and order history. 
         </p> 
         
-        <div class="header-actions"> 
-          <a href="https://github.com/callyjia/Acro" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="github-button" > 
-            View on GitHub 
-          </a> 
-          
-          <router-link to="/" class="back-button"> 
-            Back to Portfolio 
-          </router-link> 
-        </div> 
+        
       </div> 
     </section>
 
@@ -335,14 +324,6 @@ useScrollReveal()
   color: #6b7280; 
   font-size: 19px; 
   line-height: 1.7; 
-}
-
-/* Header buttons */ 
-
-.header-actions { 
-  display: flex; 
-  gap: 15px; 
-  margin-top: 30px; 
 }
 
 /* Content */

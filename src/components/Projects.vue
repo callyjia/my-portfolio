@@ -76,34 +76,7 @@
           </div>
         </article>
 
-        <!-- Project 3 -->
-        <article class="project-card">
-          <div class="project-image fds-bg">
-            <span class="project-abbreviation">FDS</span>
-          </div>
-
-          <div class="project-content">
-            <p class="project-type">WEB APPLICATION</p>
-            <h3>Food Delivery System</h3>
-            <p>
-              A meal-ordering app enabling users to place orders,
-              merchants to accept those orders, and a backend system to
-              manage dishes throughout the entire process.
-            </p>
-
-            <div class="tech-stack">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>Postman</span>
-            </div>
-
-            <div class="project-links">
-              <a href="#" target="_blank" class="link-secondary">GitHub</a>
-              <a href="#" target="_blank" class="link-secondary">Details</a>
-            </div>
-          </div>
-        </article>
+        
       </div>
     </div>
   </section>
@@ -137,8 +110,10 @@ h2 {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .project-card {
@@ -159,7 +134,7 @@ h2 {
 
 /* Project image headers with different gradients */
 .project-image {
-  height: 160px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -180,10 +155,6 @@ h2 {
 
 .pos-bg {
   background: linear-gradient(135deg, #059669 0%, #047857 100%);
-}
-
-.fds-bg {
-  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
 }
 
 .project-abbreviation {
@@ -216,7 +187,7 @@ h2 {
 }
 
 .project-content h3 {
-  font-size: 21px;
+  font-size: 22px;
   color: var(--gray-900);
   margin-bottom: 10px;
   font-weight: 700;
@@ -224,8 +195,8 @@ h2 {
 
 .project-content p {
   color: var(--gray-500);
-  line-height: 1.6;
-  font-size: 14px;
+  line-height: 1.65;
+  font-size: 15px;
   flex: 1;
 }
 
