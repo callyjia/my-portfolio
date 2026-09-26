@@ -78,12 +78,22 @@
         <div class="project-section reveal">
           <h2>Project Screenshots</h2>
           <div class="screenshots">
-            <div class="screenshot">
-              <img :src="wmsForecasting" alt="WMS Forecasting" />
-            </div>
-            <div class="screenshot">
-              <img :src="wmsLifecycle" alt="WMS Lifecycle" />
-            </div>
+            <figure class="screenshot">
+              <img :src="wmsInventory" alt="WMS real-time inventory overview dashboard" />
+              <figcaption>Real-time Inventory Overview</figcaption>
+            </figure>
+            <figure class="screenshot">
+              <img :src="wmsInbound" alt="WMS inbound order creation form" />
+              <figcaption>Inbound Order Creation</figcaption>
+            </figure>
+            <figure class="screenshot">
+              <img :src="wmsForecasting" alt="WMS forecasting module" />
+              <figcaption>Forecasting</figcaption>
+            </figure>
+            <figure class="screenshot">
+              <img :src="wmsLifecycle" alt="WMS board lifecycle tracking" />
+              <figcaption>Board Lifecycle Tracking</figcaption>
+            </figure>
           </div>
         </div>
 
@@ -110,6 +120,8 @@
 import { useScrollReveal } from '../composables/useScrollReveal'
 import wmsForecasting from '../assets/wms-forecasting.png'
 import wmsLifecycle from '../assets/wms-lifecycle.png'
+import wmsInbound from '../assets/wms-inbound.png'
+import wmsInventory from '../assets/wms-inventory.png'
 
 useScrollReveal()
 </script>
@@ -276,22 +288,36 @@ useScrollReveal()
 }
 
 .screenshot {
+  margin: 0;
   border-radius: 12px;
   overflow: hidden;
   border: 1px solid var(--gray-200);
   background: white;
   transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .screenshot:hover {
   box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
+  border-color: var(--green-light);
 }
 
 .screenshot img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.screenshot figcaption {
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-700);
+  text-align: center;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-200);
 }
 
 .project-actions {
