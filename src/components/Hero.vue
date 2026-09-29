@@ -1,19 +1,14 @@
 <template>
   <section id="home" class="hero">
-    <!-- Animated background blobs -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-
     <div class="hero-container">
       <!-- Left: Text -->
       <div class="hero-content">
         <p class="intro animate-fade-in-up" style="animation-delay: 0.1s">
-          <span class="wave">👋</span> Hello, I'm
+          Hello, I'm
         </p>
 
         <h1 class="animate-fade-in-up" style="animation-delay: 0.2s">
-          Callysta Kalyana
+          Callysta<br />Kalyana
         </h1>
 
         <h2 class="animate-fade-in-up" style="animation-delay: 0.3s">
@@ -26,16 +21,14 @@
         </p>
 
         <div class="hero-buttons animate-fade-in-up" style="animation-delay: 0.5s">
-          <a href="#projects" class="btn primary">
+          <a href="#projects" class="btn primary" @click.prevent="scrollToSection('projects')">
             <span>View My Projects</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />
             </svg>
           </a>
 
-          
-
-          <a href="#contact" class="btn secondary">
+          <a href="#contact" class="btn secondary" @click.prevent="scrollToSection('contact')">
             Contact Me
           </a>
         </div>
@@ -53,22 +46,19 @@
               <polyline points="22,6 12,13 2,6" />
             </svg>
           </a>
-          
         </div>
       </div>
 
       <!-- Right: Profile photo -->
       <div class="hero-photo animate-fade-in-right" style="animation-delay: 0.3s">
-        <div class="photo-ring"></div>
-        <div class="photo-ring photo-ring-2"></div>
-        <div class="photo-container">
+        <div class="photo-frame">
           <img src="../assets/Callysta Kalyana 3x4 Red.JPG" alt="Callysta Kalyana" />
         </div>
-        
+        <div class="photo-caption">
+          <span>—</span> Callysta Kalyana
+        </div>
       </div>
     </div>
-
-  
   </section>
 </template>
 
@@ -113,6 +103,11 @@ function typeEffect() {
   }
 }
 
+function scrollToSection(section) {
+  const el = document.getElementById(section)
+  if (el) el.scrollIntoView({ behavior: 'smooth' })
+}
+
 onMounted(() => {
   typeTimer = setTimeout(typeEffect, 800)
 })
@@ -127,280 +122,186 @@ onUnmounted(() => {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: var(--gradient-hero);
-  padding: 100px 24px 60px;
+  background: var(--white);
+  padding: 100px 40px 60px;
   position: relative;
   overflow: hidden;
 }
 
-/* Animated background blobs */
-.blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.3;
-  z-index: 0;
-}
-
-.blob-1 {
-  width: 400px;
-  height: 400px;
-  background: #4ade80;
-  top: -100px;
-  right: -50px;
-  animation: float 8s ease-in-out infinite;
-}
-
-.blob-2 {
-  width: 300px;
-  height: 300px;
-  background: #86efac;
-  bottom: -50px;
-  left: -50px;
-  animation: float 10s ease-in-out infinite reverse;
-}
-
-.blob-3 {
-  width: 200px;
-  height: 200px;
-  background: #bbf7d0;
-  top: 50%;
-  left: 40%;
-  animation: float 7s ease-in-out infinite;
-  animation-delay: 2s;
-}
-
 .hero-container {
-  max-width: 1100px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
   align-items: center;
   position: relative;
   z-index: 1;
 }
 
 .hero-content {
-  max-width: 550px;
+  max-width: 600px;
 }
 
 .intro {
-  color: var(--green);
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.wave {
-  display: inline-block;
-  animation: wave 2.5s ease-in-out infinite;
-  transform-origin: 70% 70%;
-}
-
-@keyframes wave {
-  0%, 100% { transform: rotate(0deg); }
-  10%, 30% { transform: rotate(14deg); }
-  20% { transform: rotate(-8deg); }
-  40% { transform: rotate(14deg); }
-  50% { transform: rotate(-4deg); }
-  60% { transform: rotate(10deg); }
+  color: var(--gray-text);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
 }
 
 h1 {
-  font-size: 54px;
-  line-height: 1.1;
-  margin: 0 0 12px;
-  color: var(--gray-900);
-  font-weight: 800;
-  letter-spacing: -1.5px;
+  font-family: var(--font-serif);
+  font-size: 88px;
+  line-height: 1;
+  margin: 0 0 20px;
+  color: var(--black);
+  font-weight: 700;
+  letter-spacing: -3px;
 }
 
 h2 {
-  font-size: 26px;
-  font-weight: 500;
-  color: var(--gray-700);
-  margin-bottom: 20px;
-  min-height: 36px;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--gray-text);
+  margin-bottom: 24px;
+  min-height: 28px;
+  font-style: italic;
 }
 
 .typed-text {
-  background: var(--gradient-green);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--black);
+  font-style: normal;
+  font-weight: 500;
 }
 
 .cursor {
-  color: var(--green);
+  color: var(--black);
   animation: blink 1s step-end infinite;
   font-weight: 300;
 }
 
 .description {
-  font-size: 17px;
-  line-height: 1.7;
-  color: var(--gray-500);
-  max-width: 500px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--gray-text);
+  max-width: 480px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 14px;
-  margin-top: 32px;
+  gap: 16px;
+  margin-top: 36px;
   flex-wrap: wrap;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 13px 26px;
-  border-radius: 10px;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 0;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   transition: all var(--transition);
   cursor: pointer;
-  border: none;
+  border: 1px solid var(--black);
 }
 
 .btn.primary {
-  background: var(--gradient-green);
-  color: white;
-  box-shadow: var(--shadow-green);
+  background: var(--black);
+  color: var(--white);
 }
 
 .btn.primary:hover {
+  background: var(--white);
+  color: var(--black);
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(22, 163, 74, 0.35);
-}
-
-
-
-.btn.cv:hover {
-  border-color: var(--green);
-  color: var(--green);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
 }
 
 .btn.secondary {
-  border: 2px solid transparent;
-  color: var(--gray-600);
+  border: 1px solid var(--gray-border);
+  color: var(--black);
   background: transparent;
 }
 
 .btn.secondary:hover {
-  border-color: var(--gray-200);
-  background: white;
+  border-color: var(--black);
+  background: var(--white);
   transform: translateY(-2px);
 }
 
 /* Social links */
 .hero-social {
   display: flex;
-  gap: 12px;
-  margin-top: 28px;
+  gap: 16px;
+  margin-top: 32px;
 }
 
 .hero-social a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 10px;
-  background: white;
-  border: 1px solid var(--gray-200);
-  color: var(--gray-600);
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
+  background: transparent;
+  border: 1px solid var(--gray-border);
+  color: var(--black);
   transition: all var(--transition);
 }
 
 .hero-social a:hover {
-  color: var(--green);
-  border-color: var(--green);
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
   transform: translateY(-3px);
-  box-shadow: var(--shadow-md);
 }
 
-/* Profile photo */
+/* Profile photo — rectangular, architectural */
 .hero-photo {
   position: relative;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-.photo-ring {
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  border: 2px dashed rgba(22, 163, 74, 0.25);
-  animation: spin 20s linear infinite;
-}
-
-.photo-ring-2 {
-  width: 400px;
-  height: 400px;
-  border: 1px solid rgba(22, 163, 74, 0.15);
-  animation: spin 30s linear infinite reverse;
-}
-
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-.photo-container {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
+.photo-frame {
+  width: 340px;
+  height: 440px;
   overflow: hidden;
-  border: 6px solid white;
-  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--black);
   position: relative;
-  z-index: 2;
 }
 
-.photo-container img {
+.photo-frame img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 20%;
+  filter: grayscale(100%);
 }
 
-
-
-/* Scroll indicator */
-.scroll-indicator {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: var(--gray-400);
+.photo-caption {
+  margin-top: 16px;
   font-size: 12px;
-  font-weight: 600;
   letter-spacing: 1px;
+  color: var(--gray-text);
   text-transform: uppercase;
-  z-index: 2;
-}
-
-
-@keyframes scroll-wheel {
-  0% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 0; transform: translateY(10px); }
 }
 
 /* ===== Mobile ===== */
 @media (max-width: 900px) {
+  .hero {
+    padding: 100px 24px 60px;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
     gap: 50px;
@@ -412,6 +313,15 @@ h2 {
     margin: 0 auto;
   }
 
+  .intro {
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    font-size: 52px;
+    letter-spacing: -2px;
+  }
+
   .hero-buttons,
   .hero-social {
     justify-content: center;
@@ -421,39 +331,20 @@ h2 {
     order: -1;
   }
 
-  .photo-container {
-    width: 220px;
-    height: 220px;
-  }
-
-  .photo-ring {
-    width: 270px;
-    height: 270px;
-  }
-
-  .photo-ring-2 {
-    width: 300px;
-    height: 300px;
-  }
-
-  .badge-1 {
-    left: 10px;
-    bottom: 20px;
-  }
-
-  .badge-2 {
-    right: 10px;
-    top: 20px;
+  .photo-frame {
+    width: 240px;
+    height: 310px;
   }
 }
 
 @media (max-width: 600px) {
   h1 {
-    font-size: 38px;
+    font-size: 42px;
+    letter-spacing: -1px;
   }
 
   h2 {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .description {
@@ -461,8 +352,9 @@ h2 {
   }
 
   .btn {
-    padding: 11px 20px;
-    font-size: 14px;
+    padding: 14px 24px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
   }
 
   .hero-buttons {
@@ -474,24 +366,9 @@ h2 {
     justify-content: center;
   }
 
-  .photo-container {
+  .photo-frame {
     width: 180px;
-    height: 180px;
-  }
-
-  .photo-ring {
-    width: 230px;
     height: 230px;
-  }
-
-  .photo-ring-2 {
-    width: 260px;
-    height: 260px;
-  }
-
-  .blob {
-    width: 250px !important;
-    height: 250px !important;
   }
 }
 </style>

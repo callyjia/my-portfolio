@@ -1,20 +1,15 @@
 <template>
   <section id="contact" class="section contact-section">
-    <!-- Animated background -->
-    <div class="contact-bg">
-      <div class="bg-orb bg-orb-1"></div>
-      <div class="bg-orb bg-orb-2"></div>
-    </div>
-
     <div class="container">
-      <h2 class="reveal">Contact Me</h2>
+      <p class="section-label reveal">Get in Touch</p>
+      <h2 class="reveal reveal-delay-1">Contact Me</h2>
 
-      <p class="contact-text reveal reveal-delay-1">
-        Got a project waiting to be realized? Let's collaborate and make it happen!
+      <p class="contact-text reveal reveal-delay-2">
+        Got a project waiting to be realized? Let's collaborate and make it happen.
       </p>
 
       <form
-        class="contact-form reveal reveal-delay-2"
+        class="contact-form reveal reveal-delay-3"
         @submit.prevent="handleSubmit"
       >
         <div class="form-row">
@@ -50,8 +45,8 @@
 
         <div class="form-actions">
           <button type="submit" class="send-btn">
-            <span>SEND</span>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <span>Send</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="22" y1="2" x2="11" y2="13" />
               <polygon points="22 2 15 22 11 13 2 9 22 2" />
             </svg>
@@ -64,7 +59,7 @@
       </form>
     </div>
 
-    <!-- Bottom gradient line -->
+    <!-- Bottom hairline -->
     <div class="bottom-accent"></div>
 
     <!-- Footer -->
@@ -90,7 +85,6 @@ const statusType = ref('success')
 const year = new Date().getFullYear()
 
 function handleSubmit() {
-  // Build a mailto link so the user's email client opens with the form filled in
   const to = 'kalyanacallysta@gmail.com'
   const subject = encodeURIComponent(`Portfolio inquiry from ${form.name}`)
   const body = encodeURIComponent(
@@ -98,8 +92,6 @@ function handleSubmit() {
   )
 
   const mailtoLink = `mailto:${to}?subject=${subject}&body=${body}`
-
-  // Open the user's mail client
   window.location.href = mailtoLink
 
   statusType.value = 'success'
@@ -116,85 +108,62 @@ function handleSubmit() {
 
 <style scoped>
 .section {
-  padding: 100px 24px 0;
+  padding: 120px 40px 0;
   position: relative;
   overflow: hidden;
 }
 
 .contact-section {
-  background: var(--dark);
-  color: white;
+  background: var(--black);
+  color: var(--white);
 }
 
 .contact-section .container {
   text-align: left;
   position: relative;
   z-index: 1;
-}
-
-/* Animated background orbs */
-.contact-bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-}
-
-.bg-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.12;
-}
-
-.bg-orb-1 {
-  width: 300px;
-  height: 300px;
-  background: var(--green-accent);
-  top: -80px;
-  left: -50px;
-  animation: float 8s ease-in-out infinite;
-}
-
-.bg-orb-2 {
-  width: 250px;
-  height: 250px;
-  background: var(--green);
-  bottom: 200px;
-  right: -50px;
-  animation: float 10s ease-in-out infinite reverse;
-}
-
-.container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
+.section-label {
+  color: var(--gray-text);
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
 h2 {
-  font-size: 42px;
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-size: 64px;
+  font-weight: 700;
   letter-spacing: -1px;
-  color: white;
-  margin-bottom: 18px;
+  color: var(--white);
+  margin-bottom: 20px;
+  line-height: 1.1;
 }
 
 .contact-text {
-  color: #d1d5db;
+  color: var(--gray-text);
   font-size: 16px;
-  line-height: 1.6;
-  margin-bottom: 35px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  max-width: 500px;
 }
 
 /* Form */
 .contact-form {
   width: 100%;
+  max-width: 700px;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  margin-bottom: 18px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .form-group {
@@ -204,12 +173,13 @@ h2 {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 16px 18px;
-  background: white;
-  border: 1px solid var(--gray-200);
-  border-radius: 6px;
-  color: var(--gray-900);
-  font-family: inherit;
+  padding: 16px 20px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--gray-text);
+  border-radius: 0;
+  color: var(--white);
+  font-family: var(--font-sans);
   font-size: 15px;
   transition: all var(--transition);
   outline: none;
@@ -217,50 +187,49 @@ h2 {
 
 .form-group textarea {
   resize: vertical;
-  min-height: 240px;
+  min-height: 200px;
   line-height: 1.6;
 }
 
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-  color: var(--gray-400);
+  color: var(--gray-text);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--green);
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+  border-bottom-color: var(--white);
 }
 
 /* Send button */
 .form-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 18px;
+  margin-top: 24px;
 }
 
 .send-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: white;
-  color: var(--gray-900);
-  border: 1px solid var(--gray-300);
-  padding: 14px 26px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--white);
+  padding: 16px 32px;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   cursor: pointer;
   transition: all var(--transition);
 }
 
 .send-btn:hover {
-  background: var(--gray-50);
-  border-color: var(--green);
-  color: var(--green);
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
 }
 
 .send-btn:active {
@@ -269,62 +238,58 @@ h2 {
 
 /* Status message */
 .status-message {
-  margin-top: 14px;
-  padding: 10px 16px;
-  border-radius: 6px;
+  margin-top: 16px;
+  padding: 12px 18px;
+  border-radius: 0;
   font-size: 14px;
   font-weight: 500;
 }
 
 .status-message.success {
-  background: rgba(74, 222, 128, 0.1);
-  color: var(--green-accent);
-  border: 1px solid rgba(74, 222, 128, 0.3);
+  background: transparent;
+  color: var(--white);
+  border: 1px solid var(--white);
 }
 
-/* Bottom accent line */
+/* Bottom accent — solid white hairline */
 .bottom-accent {
   position: relative;
-  height: 3px;
-  background: linear-gradient(90deg,
-    transparent 0%,
-    var(--green-accent) 30%,
-    var(--green) 50%,
-    var(--green-accent) 70%,
-    transparent 100%);
-  margin-top: 50px;
+  height: 1px;
+  background: var(--white);
+  margin-top: 60px;
   z-index: 1;
 }
 
 /* Footer */
 .contact-footer {
-  padding: 30px 24px;
+  padding: 30px 40px;
   text-align: center;
-  color: #6b7280;
-  font-size: 14px;
-  background: var(--dark);
+  color: var(--gray-text);
+  font-size: 13px;
+  background: var(--black);
   position: relative;
   z-index: 1;
+  letter-spacing: 0.5px;
 }
 
 .footer-year {
-  margin-top: 4px;
-  font-size: 13px;
+  margin-top: 6px;
+  font-size: 12px;
 }
 
 /* ===== Mobile ===== */
 @media (max-width: 600px) {
   .section {
-    padding: 70px 20px 0;
+    padding: 70px 24px 0;
   }
 
   h2 {
-    font-size: 32px;
+    font-size: 40px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 16px;
   }
 
   .form-group input,
@@ -334,7 +299,7 @@ h2 {
   }
 
   .form-group textarea {
-    min-height: 180px;
+    min-height: 160px;
   }
 
   .send-btn {

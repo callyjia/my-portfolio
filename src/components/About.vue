@@ -1,7 +1,7 @@
 <template>
   <section id="about" class="section">
     <div class="container">
-      <p class="section-label reveal">ABOUT ME</p>
+      <p class="section-label reveal">About</p>
       <h2 class="reveal reveal-delay-1">Who I Am</h2>
 
       <div class="about-content">
@@ -25,22 +25,22 @@
         </div>
 
         <div class="about-card reveal reveal-delay-3">
-          <h3>What I Focus On</h3>
+          <h3>Focus</h3>
           <ul>
             <li>
-              <span class="check-icon">✓</span> Web Development
+              <span class="check-icon">&#x2014;</span> Web Development
             </li>
             <li>
-              <span class="check-icon">✓</span> Full-Stack Development
+              <span class="check-icon">&#x2014;</span> Full-Stack Development
             </li>
             <li>
-              <span class="check-icon">✓</span> Management Systems
+              <span class="check-icon">&#x2014;</span> Management Systems
             </li>
             <li>
-              <span class="check-icon">✓</span> Database Applications
+              <span class="check-icon">&#x2014;</span> Database Applications
             </li>
             <li>
-              <span class="check-icon">✓</span> Software Engineering
+              <span class="check-icon">&#x2014;</span> Software Engineering
             </li>
           </ul>
         </div>
@@ -51,85 +51,85 @@
 
 <style scoped>
 .section {
-  padding: 100px 24px;
+  padding: 120px 40px;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .section-label {
-  color: var(--green);
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 14px;
-  margin-bottom: 8px;
+  color: var(--gray-text);
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 h2 {
-  font-size: 38px;
-  color: var(--gray-900);
-  margin-bottom: 40px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  font-family: var(--font-serif);
+  font-size: 56px;
+  color: var(--black);
+  margin-bottom: 50px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
 }
 
 .about-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 50px;
+  gap: 60px;
   align-items: start;
 }
 
 .about-content p {
-  color: var(--gray-500);
+  color: var(--gray-text);
   font-size: 17px;
-  line-height: 1.8;
-  margin-bottom: 16px;
+  line-height: 1.9;
+  margin-bottom: 18px;
 }
 
 /* About card */
 .about-card {
-  background: var(--gray-50);
-  padding: 32px;
-  border-radius: 16px;
-  border: 1px solid var(--gray-200);
+  background: var(--black);
+  padding: 40px;
+  border-radius: 0;
   transition: all var(--transition);
-}
-
-.about-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-4px);
 }
 
 .about-card h3 {
   margin-top: 0;
-  margin-bottom: 20px;
-  color: var(--gray-900);
+  margin-bottom: 24px;
+  color: var(--white);
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-style: italic;
 }
 
 .about-card li {
   list-style: none;
-  margin: 14px 0;
-  color: var(--gray-600);
+  margin: 16px 0;
+  color: var(--white);
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
 }
 
 .check-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 22px;
-  height: 22px;
-  background: var(--green-light);
-  color: var(--green-dark);
-  border-radius: 50%;
-  font-size: 12px;
-  font-weight: 800;
+  width: 16px;
+  color: var(--white);
+  font-size: 14px;
   flex-shrink: 0;
+  opacity: 0.5;
 }
 
 /* ===== Mobile ===== */
@@ -140,7 +140,7 @@ h2 {
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 36px;
   }
 
   .about-content p {
@@ -148,7 +148,7 @@ h2 {
   }
 
   .section {
-    padding: 70px 20px;
+    padding: 70px 24px;
   }
 }
 </style>

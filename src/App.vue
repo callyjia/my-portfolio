@@ -67,22 +67,22 @@ onUnmounted(() => {
   right: 30px;
   width: 48px;
   height: 48px;
-  border-radius: 50%;
-  background: var(--green);
-  color: white;
-  border: none;
+  border-radius: 0;
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--shadow-green);
   transition: all var(--transition);
   z-index: 999;
 }
 
 .scroll-top:hover {
-  background: var(--green-dark);
-  transform: translateY(-3px) scale(1.05);
+  background: var(--white);
+  color: var(--black);
+  transform: translateY(-3px);
 }
 
 /* Fade transition */

@@ -1,11 +1,8 @@
 <template>
   <div class="project-page">
     <section class="project-header">
-      <!-- Decorative blob -->
-      <div class="header-blob"></div>
-
       <div class="container">
-        <p class="project-label reveal">WEB APPLICATION</p>
+        <p class="project-label reveal">Web Application</p>
         <h1 class="reveal reveal-delay-1">Warehouse Management System</h1>
         <p class="subtitle reveal reveal-delay-2">
           A warehouse management web application for managing
@@ -105,7 +102,7 @@
             View on GitHub
           </a>
           <router-link to="/" class="back-button">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
             Back to Portfolio
@@ -132,22 +129,9 @@ useScrollReveal()
 }
 
 .project-header {
-  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
-  padding: 100px 24px;
-  position: relative;
-  overflow: hidden;
-}
-
-.header-blob {
-  position: absolute;
-  top: -100px;
-  right: -50px;
-  width: 300px;
-  height: 300px;
-  background: #86efac;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.4;
+  background: var(--white);
+  padding: 120px 40px;
+  border-bottom: 1px solid var(--black);
 }
 
 .container {
@@ -158,57 +142,60 @@ useScrollReveal()
 }
 
 .project-label {
-  color: var(--green);
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 14px;
+  color: var(--gray-text);
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
 }
 
 .project-header h1 {
-  font-size: 48px;
-  color: var(--gray-900);
-  margin: 15px 0;
-  font-weight: 800;
-  letter-spacing: -1px;
+  font-family: var(--font-serif);
+  font-size: 64px;
+  color: var(--black);
+  margin: 16px 0;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
 }
 
 .subtitle {
   max-width: 750px;
-  color: var(--gray-600);
-  font-size: 19px;
-  line-height: 1.7;
+  color: var(--gray-text);
+  font-size: 18px;
+  line-height: 1.8;
 }
 
 /* Meta info */
 .project-meta {
   display: flex;
-  gap: 40px;
-  margin-top: 30px;
+  gap: 50px;
+  margin-top: 40px;
   flex-wrap: wrap;
 }
 
 .meta-item {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
 }
 
 .meta-label {
-  font-size: 12px;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--gray-400);
-  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gray-text);
+  font-weight: 500;
 }
 
 .meta-value {
   font-size: 15px;
-  color: var(--gray-700);
-  font-weight: 600;
+  color: var(--black);
+  font-weight: 500;
 }
 
 .project-content {
-  padding: 80px 24px;
+  padding: 80px 40px;
 }
 
 .project-section {
@@ -216,16 +203,17 @@ useScrollReveal()
 }
 
 .project-section h2 {
-  font-size: 30px;
-  color: var(--gray-900);
-  margin-bottom: 20px;
-  font-weight: 800;
+  font-family: var(--font-serif);
+  font-size: 36px;
+  color: var(--black);
+  margin-bottom: 24px;
+  font-weight: 600;
   letter-spacing: -0.5px;
 }
 
 .project-section p,
 .project-section li {
-  color: var(--gray-600);
+  color: var(--gray-text);
   font-size: 17px;
   line-height: 1.8;
 }
@@ -253,10 +241,9 @@ useScrollReveal()
   position: absolute;
   left: 0;
   top: 10px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--green);
+  width: 12px;
+  height: 1px;
+  background: var(--black);
 }
 
 .technology-list {
@@ -266,18 +253,20 @@ useScrollReveal()
 }
 
 .technology-list span {
-  background: var(--green-light);
-  color: var(--green-dark);
+  background: transparent;
+  color: var(--black);
   padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 14px;
-  font-weight: 600;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--gray-border);
   transition: all var(--transition);
 }
 
 .technology-list span:hover {
-  background: var(--green);
-  color: white;
+  background: var(--black);
+  color: var(--white);
+  border-color: var(--black);
   transform: translateY(-2px);
 }
 
@@ -289,18 +278,17 @@ useScrollReveal()
 
 .screenshot {
   margin: 0;
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
-  border: 1px solid var(--gray-200);
-  background: white;
+  border: 1px solid var(--gray-border);
+  background: var(--white);
   transition: all var(--transition);
   position: relative;
 }
 
 .screenshot:hover {
-  box-shadow: var(--shadow-lg);
   transform: translateY(-4px);
-  border-color: var(--green-light);
+  border-color: var(--black);
 }
 
 .screenshot img {
@@ -315,17 +303,17 @@ useScrollReveal()
   right: 0;
   bottom: 0;
   padding: 14px 18px;
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--white);
   text-align: center;
   background: linear-gradient(
     to top,
-    rgba(17, 24, 39, 0.85) 0%,
-    rgba(17, 24, 39, 0.55) 70%,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.5) 70%,
     transparent 100%
   );
-  letter-spacing: 0.3px;
   transform: translateY(4px);
   opacity: 0.85;
   transition: opacity var(--transition), transform var(--transition);
@@ -338,7 +326,7 @@ useScrollReveal()
 
 .project-actions {
   display: flex;
-  gap: 15px;
+  gap: 16px;
   padding-top: 20px;
   flex-wrap: wrap;
 }
@@ -348,40 +336,44 @@ useScrollReveal()
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 13px 24px;
-  border-radius: 10px;
+  padding: 14px 28px;
+  border-radius: 0;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
   transition: all var(--transition);
 }
 
 .btn-github {
-  background: var(--gray-900);
-  color: white;
+  background: var(--black);
+  color: var(--white);
+  border: 1px solid var(--black);
 }
 
 .btn-github:hover {
-  background: var(--gray-800);
+  background: var(--white);
+  color: var(--black);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
 }
 
 .back-button {
-  background: var(--gradient-green);
-  color: white;
-  box-shadow: var(--shadow-green);
+  background: transparent;
+  color: var(--black);
+  border: 1px solid var(--gray-border);
 }
 
 .back-button:hover {
+  border-color: var(--black);
+  background: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(22, 163, 74, 0.35);
 }
 
 /* ===== Mobile ===== */
 @media (max-width: 700px) {
   .project-header h1 {
-    font-size: 34px;
+    font-size: 40px;
   }
 
   .subtitle {
@@ -412,11 +404,15 @@ useScrollReveal()
   }
 
   .project-section h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .project-content {
-    padding: 50px 20px;
+    padding: 50px 24px;
+  }
+
+  .project-header {
+    padding: 80px 24px;
   }
 }
 </style>

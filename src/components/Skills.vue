@@ -1,13 +1,13 @@
 <template>
   <section id="skills" class="section skills-section">
     <div class="container">
-      <p class="section-label reveal">MY SKILLS</p>
+      <p class="section-label reveal">Expertise</p>
       <h2 class="reveal reveal-delay-1">Technologies I Work With</h2>
 
       <div class="skills-grid reveal-stagger reveal-delay-2">
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <polyline points="16 18 22 12 16 6" />
               <polyline points="8 6 2 12 8 18" />
             </svg>
@@ -23,7 +23,7 @@
 
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
               <line x1="8" y1="21" x2="16" y2="21" />
               <line x1="12" y1="17" x2="12" y2="21" />
@@ -39,7 +39,7 @@
 
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
               <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
               <line x1="6" y1="6" x2="6.01" y2="6" />
@@ -54,7 +54,7 @@
 
         <div class="skill-card">
           <div class="skill-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 7V4h16v3" />
               <path d="M9 20h6" />
               <path d="M12 4v16" />
@@ -75,45 +75,48 @@
 
 <style scoped>
 .section {
-  padding: 100px 24px;
+  padding: 120px 40px;
 }
 
 .skills-section {
-  background: var(--gray-50);
+  background: var(--gray-bg);
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .section-label {
-  color: var(--green);
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 14px;
-  margin-bottom: 8px;
+  color: var(--gray-text);
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 h2 {
-  font-size: 38px;
-  margin-bottom: 40px;
-  color: var(--gray-900);
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  font-family: var(--font-serif);
+  font-size: 56px;
+  margin-bottom: 50px;
+  color: var(--black);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
 }
 
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 
 .skill-card {
-  background: white;
-  padding: 28px 24px;
-  border: 1px solid var(--gray-200);
-  border-radius: 14px;
+  background: var(--white);
+  padding: 36px 28px;
+  border: 1px solid var(--gray-border);
+  border-radius: 0;
   transition: all var(--transition);
   position: relative;
   overflow: hidden;
@@ -125,8 +128,8 @@ h2 {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
-  background: var(--gradient-green);
+  height: 2px;
+  background: var(--black);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform var(--transition);
@@ -134,8 +137,7 @@ h2 {
 
 .skill-card:hover {
   transform: translateY(-6px);
-  box-shadow: var(--shadow-lg);
-  border-color: var(--green-light);
+  border-color: var(--black);
 }
 
 .skill-card:hover::before {
@@ -146,37 +148,41 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 52px;
-  height: 52px;
-  border-radius: 12px;
-  background: var(--green-light);
-  color: var(--green-dark);
-  margin-bottom: 18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 0;
+  background: var(--black);
+  color: var(--white);
+  margin-bottom: 20px;
   transition: all var(--transition);
 }
 
 .skill-card:hover .skill-icon {
-  background: var(--green);
-  color: white;
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--black);
   transform: scale(1.1);
 }
 
 .skill-card h3 {
   margin-top: 0;
-  margin-bottom: 16px;
-  color: var(--gray-900);
-  font-size: 18px;
+  margin-bottom: 18px;
+  color: var(--black);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 
 .skill-card p {
-  color: var(--gray-500);
+  color: var(--gray-text);
   margin: 8px 0;
-  font-size: 15px;
+  font-size: 14px;
   transition: color var(--transition);
 }
 
 .skill-card:hover p {
-  color: var(--gray-700);
+  color: var(--black);
 }
 
 /* ===== Mobile ===== */
@@ -192,11 +198,11 @@ h2 {
   }
 
   h2 {
-    font-size: 30px;
+    font-size: 36px;
   }
 
   .section {
-    padding: 70px 20px;
+    padding: 70px 24px;
   }
 }
 </style>

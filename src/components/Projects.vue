@@ -1,7 +1,7 @@
 <template>
   <section id="projects" class="section">
     <div class="container">
-      <p class="section-label reveal">MY WORK</p>
+      <p class="section-label reveal">Selected Work</p>
       <h2 class="reveal reveal-delay-1">Featured Projects</h2>
 
       <div class="projects-grid reveal-stagger reveal-delay-2">
@@ -12,7 +12,7 @@
           </div>
 
           <div class="project-content">
-            <p class="project-type">WEB APPLICATION</p>
+            <p class="project-type">Web Application</p>
             <h3>Warehouse Management System</h3>
             <p>
               A warehouse management web application designed to manage
@@ -30,7 +30,7 @@
             <div class="project-links">
               <router-link to="/project/wms" class="link-primary">
                 View Details
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </router-link>
@@ -48,8 +48,8 @@
           </div>
 
           <div class="project-content">
-            <p class="project-type">ANDROID APPLICATION</p>
-            <h3>Point-of-sale System</h3>
+            <p class="project-type">Android Application</p>
+            <h3>Point-of-Sale System</h3>
             <p>
               A mobile checkout app for small and medium-sized retail stores
               enabling digitalization of the entire process, including product
@@ -65,7 +65,7 @@
             <div class="project-links">
               <router-link to="/project/acro" class="link-primary">
                 View Details
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
               </router-link>
@@ -76,7 +76,7 @@
           </div>
         </article>
 
-        
+
       </div>
     </div>
   </section>
@@ -84,28 +84,31 @@
 
 <style scoped>
 .section {
-  padding: 100px 24px;
+  padding: 120px 40px;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 .section-label {
-  color: var(--green);
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  font-size: 14px;
-  margin-bottom: 8px;
+  color: var(--gray-text);
+  font-weight: 400;
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 h2 {
-  font-size: 38px;
-  margin-bottom: 40px;
-  color: var(--gray-900);
-  font-weight: 800;
-  letter-spacing: -0.5px;
+  font-family: var(--font-serif);
+  font-size: 56px;
+  margin-bottom: 50px;
+  color: var(--black);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
 }
 
 .projects-grid {
@@ -117,10 +120,10 @@ h2 {
 }
 
 .project-card {
-  border: 1px solid var(--gray-200);
-  border-radius: 16px;
+  border: 1px solid var(--gray-border);
+  border-radius: 0;
   overflow: hidden;
-  background: white;
+  background: var(--white);
   transition: all var(--transition);
   display: flex;
   flex-direction: column;
@@ -128,11 +131,10 @@ h2 {
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--green-light);
+  border-color: var(--black);
 }
 
-/* Project image headers with different gradients */
+/* Project image headers — pure black */
 .project-image {
   height: 180px;
   display: flex;
@@ -140,27 +142,30 @@ h2 {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background: var(--black);
 }
 
 .project-image::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.15) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.05) 0%, transparent 50%);
 }
 
 .wms-bg {
-  background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+  background: var(--black);
 }
 
 .pos-bg {
-  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  background: var(--black);
 }
 
 .project-abbreviation {
-  font-size: 32px;
-  font-weight: 800;
-  color: white;
+  font-family: var(--font-serif);
+  font-size: 42px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--white);
   letter-spacing: 2px;
   position: relative;
   z-index: 1;
@@ -168,34 +173,37 @@ h2 {
 }
 
 .project-card:hover .project-abbreviation {
-  transform: scale(1.15);
+  transform: scale(1.1);
 }
 
 .project-content {
-  padding: 26px;
+  padding: 30px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
 .project-type {
-  color: var(--green);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+  color: var(--gray-text);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
 }
 
 .project-content h3 {
-  font-size: 22px;
-  color: var(--gray-900);
-  margin-bottom: 10px;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: var(--black);
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
 }
 
 .project-content p {
-  color: var(--gray-500);
-  line-height: 1.65;
+  color: var(--gray-text);
+  line-height: 1.7;
   font-size: 15px;
   flex: 1;
 }
@@ -204,27 +212,28 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 18px 0;
+  margin: 20px 0;
 }
 
 .tech-stack span {
-  background: var(--gray-100);
-  color: var(--gray-600);
-  padding: 5px 12px;
-  border-radius: 6px;
-  font-size: 13px;
+  background: transparent;
+  color: var(--black);
+  padding: 6px 14px;
+  border-radius: 0;
+  font-size: 12px;
   font-weight: 500;
+  letter-spacing: 0.5px;
+  border: 1px solid var(--gray-border);
   transition: all var(--transition);
 }
 
 .project-card:hover .tech-stack span {
-  background: var(--green-light);
-  color: var(--green-dark);
+  border-color: var(--black);
 }
 
 .project-links {
   display: flex;
-  gap: 16px;
+  gap: 20px;
   align-items: center;
   margin-top: auto;
 }
@@ -232,28 +241,32 @@ h2 {
 .link-primary {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  color: var(--green);
+  gap: 8px;
+  color: var(--black);
   font-weight: 600;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   transition: gap var(--transition);
 }
 
 .link-primary:hover {
-  gap: 10px;
+  gap: 12px;
 }
 
 .link-secondary {
-  color: var(--gray-500);
-  font-weight: 600;
+  color: var(--gray-text);
+  font-weight: 500;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   transition: color var(--transition);
 }
 
 .link-secondary:hover {
-  color: var(--green);
+  color: var(--black);
 }
 
 /* ===== Mobile ===== */
@@ -267,16 +280,15 @@ h2 {
 
 @media (max-width: 600px) {
   h2 {
-    font-size: 30px;
+    font-size: 36px;
   }
 
   .section {
-    padding: 70px 20px;
+    padding: 70px 24px;
   }
 
   .project-content {
-    padding: 20px;
+    padding: 24px;
   }
 }
-
 </style>
