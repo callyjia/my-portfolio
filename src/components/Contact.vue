@@ -119,7 +119,7 @@ function handleSubmit() {
 }
 
 .contact-section .container {
-  text-align: left;
+  text-align: center;
   position: relative;
   z-index: 1;
   max-width: 1200px;
@@ -149,7 +149,7 @@ h2 {
   color: var(--gray-text);
   font-size: 16px;
   line-height: 1.7;
-  margin-bottom: 40px;
+  margin: 0 auto 50px;
   max-width: 500px;
 }
 
@@ -157,6 +157,7 @@ h2 {
 .contact-form {
   width: 100%;
   max-width: 700px;
+  margin: 0 auto;
 }
 
 .form-row {
@@ -204,7 +205,7 @@ h2 {
 /* Send button */
 .form-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 24px;
 }
 
