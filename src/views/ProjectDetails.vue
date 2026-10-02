@@ -10,20 +10,7 @@
           and historical records.
         </p>
 
-        <div class="project-meta reveal reveal-delay-3">
-          <div class="meta-item">
-            <span class="meta-label">Role</span>
-            <span class="meta-value">Full-Stack Developer</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Type</span>
-            <span class="meta-value">Corporate Internship</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-label">Stack</span>
-            <span class="meta-value">Vue · Spring Boot · MySQL</span>
-          </div>
-        </div>
+        
       </div>
     </section>
 

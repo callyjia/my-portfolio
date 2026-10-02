@@ -69,7 +69,6 @@ const roles = [
   'Software Engineering Student',
   'Junior Full-Stack Developer',
   'Web Application Developer',
-  'Problem Solver',
 ]
 
 const displayText = ref('')

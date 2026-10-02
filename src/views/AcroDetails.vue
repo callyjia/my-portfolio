@@ -5,7 +5,7 @@
       <div class="container">
         <p class="project-label">Android Application</p>
 
-        <h1>Acro POS</h1>
+        <h1>POS Management System</h1>
 
         <p class="subtitle">
           A lightweight offline-first Point of Sale application
